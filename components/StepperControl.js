@@ -21,10 +21,10 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
       unfinishedStep = count < 10;
       break;
     case 5:
-      unfinishedStep = count < 15;
+      unfinishedStep = count < 16;
       break;
     case 6:
-      unfinishedStep = count < 15;
+      unfinishedStep = count < 16;
       break;
     default:
       break;
@@ -52,3 +52,4 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
     </div>
   );
 }
+

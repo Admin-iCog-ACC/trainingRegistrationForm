@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
+import {useRouter} from 'next/router';
 
 function ContentSection() {
+  const router = useRouter()
   return (
     <div className="max-w-5xl mx-auto my-36">
       <div className="space-y-2">
@@ -36,6 +38,16 @@ function ContentSection() {
             disseminate positive AYSRH information to educate the Adolescents
             and Youth over the course of 12 months.
           </p>
+          <div className="flex space-x-1">
+                <span className="text-[#1593a7] font-semibold space-x-1">
+                  <a href="https://www.facebook.com/profile.php?id=100081525567992">Facebook</a> |
+                  <a href="https://twitter.com/wedesalon?t=ZaEFuL2g1FQhUfDqulAfbw&s=09">Twitter</a> |
+                  <a href="https://instagram.com/wede_salon?igshid=YmMyMTA2M2Y=">Instagram</a> |
+                  <a href="https://vm.tiktok.com/ZMNdLCwG7/">
+                    Tiktok
+                  </a>
+                </span>
+              </div>
         </div>
         <div className="py-10 px-5 bg-white flex flex-col items-center group hover:shadow-xl transition duration-500 space-y-4 w-96">
           <div className="relative h-28 w-28 ">
@@ -54,9 +66,9 @@ function ContentSection() {
             SRH will take part in various training such as media literacy skills
             and AYSRH value clarification and mentorship programs.
           </p>
-          <a className="text-[#1593a7] font-semibold" href="">
+          <button className="text-[#1593a7] font-semibold" onClick={e=>router.push("/accelerator#accelerator-program")}>
             Read More
-          </a>
+          </button>
         </div>
       </div>
     </div>

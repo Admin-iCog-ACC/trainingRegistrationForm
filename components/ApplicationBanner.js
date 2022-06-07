@@ -1,7 +1,17 @@
 import Image from 'next/image';
-import React from 'react';
+import { useRef, useEffect } from 'react';
+import {useRouter} from 'next/router';
 
 function ApplicationBanner() {
+  const {asPath} = useRouter()
+  const applicationProcessRef = useRef(null)
+  useEffect(() => {
+    if(asPath.split("#")[1]!==undefined && asPath.split("#")[1] ==="accelerator-program"){
+      window.scrollTo({top: applicationProcessRef?.current?.offsetTop, behavior: 'smooth'})
+    }
+  }, [asPath])
+  
+
   return (
     <div className="max-w-4xl mx-auto my-10 font-raleway space-y-8">
       <div className="relative h-96 w-full">
@@ -13,9 +23,9 @@ function ApplicationBanner() {
         />
       </div>
       <div className="space-y-5">
-        <h1 className="text-5xl text-gray-700 font-bold">
+         <h1 ref={applicationProcessRef} className="text-5xl text-gray-700 font-bold">
           Application Process
-        </h1>
+        </h1> 
         <ul className="list-disc pl-8 text-lg tracking-wide text-[#333333]">
           <li>
             Applicants must submit their applications electronically through

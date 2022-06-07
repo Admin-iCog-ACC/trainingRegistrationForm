@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStepperContext } from '../../contexts/StepperContext';
+import { validateInputs } from '../../utils/validateInputs';
 import Required from './Required';
 
 function ProductStage() {
@@ -9,23 +10,27 @@ function ProductStage() {
     const { name, value, required } = e.target;
     setUserData({
       ...userData,
-      [name]: { value, required, error: required && !value ? 'error' : null },
+      [name]: {
+        value,
+        required,
+        error: required ? validateInputs(name, value) : null,
+      },
     });
   };
   return (
     <div className="flex flex-col space-y-3 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid-style">
         <div className="mx-2 flex-1">
-          <label className="mt-3 h-6 text-xs font-bold uppercase  text-black">
+          <label className="label-style">
             Current Status of your Product(s) :
           </label>
           <Required />
           <select
             required
+            value={userData['statusOfProduct']?.value || ''}
             name="statusOfProduct"
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-                    focus:border-indigo-500 focus:ring-indigo-500"
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>POC(Idea Stage)</option>
@@ -37,16 +42,16 @@ function ProductStage() {
           </select>
         </div>
         <div className="mx-2 flex-1">
-          <label className="mt-3 h-6 text-xs font-bold uppercase text-black">
+          <label className="label-style">
             Is your Product Registered as a Business :
           </label>
           <Required />
           <select
             required
             name="productRegisteredBusiness"
+            value={userData['productRegisteredBusiness']?.value || ''}
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-                    focus:border-indigo-500 focus:ring-indigo-500"
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>Yes</option>
@@ -54,22 +59,16 @@ function ProductStage() {
           </select>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid-style">
         <div className="mx-2 flex-1">
-          <label
-            htmlFor="qq"
-            className="mt-3 h-6 text-xs font-bold uppercase  text-black"
-          >
-            Establishment Date :
-          </label>
+          <label className="label-style">Establishment Date :</label>
           <Required />
           <select
             required
+            value={userData['establishmentDate']?.value || ''}
             name="establishmentDate"
-            id="qq"
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-                    focus:border-indigo-500 focus:ring-indigo-500"
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>Less than 1 year</option>
@@ -79,14 +78,14 @@ function ProductStage() {
           </select>
         </div>
         <div className="mx-2 flex-1">
-          <label className="mt-3 h-6 text-xs font-bold uppercase text-black">
+          <label className="label-style">
             Do you have a Website for your Startup :
           </label>
           <select
             name="websiteForStartup"
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-                    focus:border-indigo-500 focus:ring-indigo-500"
+            value={userData['websiteForStartup']?.value || ''}
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>Yes</option>
@@ -95,16 +94,16 @@ function ProductStage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid-style">
         <div className="mx-2  flex-1">
-          <label className="mt-3 h-6 text-xs font-bold uppercase  text-black">
+          <label className="label-style">
             Do you have a Mobile Application for your Startup :
           </label>
           <select
             name="applicationForStartup"
+            value={userData['applicationForStartup']?.value || ''}
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-            focus:border-indigo-500 focus:ring-indigo-500"
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>Yes</option>
@@ -113,14 +112,14 @@ function ProductStage() {
         </div>
 
         <div className="mx-2  flex-1">
-          <label className="mt-3 h-6 text-xs font-bold uppercase  text-black">
+          <label className="label-style">
             Do you Use Online Marketing for your Startup :
           </label>
           <select
             name="onlineMarketing"
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-            focus:border-indigo-500 focus:ring-indigo-500"
+            value={userData['onlineMarketing']?.value || ''}
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>Considerable amount of usage</option>
@@ -129,16 +128,16 @@ function ProductStage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid-style">
         <div className="mx-2 w-full flex-1">
-          <label className="mt-3 h-6 text-xs font-bold uppercase  text-black">
+          <label className="label-style">
             Do you have Social-Media for your Startup :
           </label>
           <select
             name="socialMedia"
+            value={userData['socialMedia']?.value || ''}
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-                    focus:border-indigo-500 focus:ring-indigo-500"
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>Facebook</option>
@@ -150,14 +149,12 @@ function ProductStage() {
           </select>
         </div>
         <div className="mx-2 w-full flex-1">
-          <label className="mt-3 h-6 text-xs font-bold uppercase  text-black">
-            Social Media Presence :
-          </label>
+          <label className="label-style">Social Media Presence :</label>
           <select
             name="socialMediaPresence"
+            value={userData['socialMediaPresence']?.value || ''}
             onChange={handleChange}
-            className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-                    focus:border-indigo-500 focus:ring-indigo-500"
+            className="select-style"
           >
             <option value>- Select -</option>
             <option>Mega (1M or more followers)</option>
@@ -168,7 +165,7 @@ function ProductStage() {
         </div>
       </div>
       <div className="mx-2 w-full flex-1">
-        <label className="mt-3 h-6 text-xs font-bold uppercase  text-black">
+        <label className="label-style">
           Do you have Future Plans of Expanding into Different Market Segments?
           :
         </label>
@@ -176,9 +173,9 @@ function ProductStage() {
         <select
           required
           name="futurePlanOfExpanding"
+          value={userData['futurePlanOfExpanding']?.value || ''}
           onChange={handleChange}
-          className="w-full p-2 my-2 border-gray-300 rounded-lg shadow-sm
-                    focus:border-indigo-500 focus:ring-indigo-500"
+          className="select-style"
         >
           <option value>- Select -</option>
           <option>Yes</option>

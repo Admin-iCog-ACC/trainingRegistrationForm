@@ -65,7 +65,7 @@ function Tabs({ color }) {
                 href="#link3"
                 role="tablist"
               >
-                Seen Funding
+                Seed Funding
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">

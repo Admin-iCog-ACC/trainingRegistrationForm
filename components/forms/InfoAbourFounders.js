@@ -3,7 +3,7 @@ import { useStepperContext } from '../../contexts/StepperContext';
 
 function InfoAboutFounders() {
   const [founderInfos, setFounderInfos] = useState([
-    { fullName: '', age: 0, gender: '' },
+    { fullName: '', age: 15, gender: '' },
   ]);
 
   const { userData, setUserData } = useStepperContext();
@@ -13,10 +13,18 @@ function InfoAboutFounders() {
     list[index][name] = value;
     setFounderInfos(list);
     const validated = founderInfos.every(
-      (info) => info.fullName.length > 1 && info.age > 10 && info.gender !== ''
+      (info) =>
+        info.fullName.length > 1 &&
+       (info.age >= 15 ||
+        info.age <= 35) &&
+        info.gender !== ''
     );
     const filteredFounders = userData['founders']?.filter(
-      (info) => info.fullName.length > 1 && info.age > 10 && info.gender !== ''
+      (info) =>
+        info.fullName.length > 1 &&
+        (info.age >= 15 ||
+        info.age <= 35) &&
+        info.gender !== ''
     );
     setUserData({ ...userData, founders: filteredFounders ?? [] });
     if (validated) {
@@ -25,7 +33,7 @@ function InfoAboutFounders() {
   };
 
   const addToList = () => {
-    setFounderInfos([...founderInfos, { fullName: '', age: 0, gender: '' }]);
+    setFounderInfos([...founderInfos, { fullName: '', age: 15, gender: '' }]);
   };
 
   const removeFromList = (index) => {
@@ -37,11 +45,11 @@ function InfoAboutFounders() {
   return (
     <div className="text-xs space-y-5 ">
       <div className="space-x-1  flex justify-between">
-        <label className="text-xs font-bold uppercase text-black">
+        <label className="label-style">
           {' '}
           FOUNDER/CO FOUNDERS NAME, AGE & GENDER : *{' '}
         </label>
-        <button className="px-2 py-1 rounded bg-blue-600" onClick={addToList}>
+        <button className="px-2 rounded bg-blue-600" onClick={addToList}>
           Add
         </button>
       </div>
@@ -66,6 +74,8 @@ function InfoAboutFounders() {
                 required
                 type="number"
                 name="age"
+                min={15}
+                max={35}
                 className="appearance-none p-1 px-2 w-14 rounded border border-gray-300  text-gray-800 outline-none"
                 value={x.age}
                 onChange={(e) => inputChange(e, index)}

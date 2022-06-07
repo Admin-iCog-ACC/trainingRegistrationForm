@@ -4,13 +4,12 @@ import { useState } from 'react';
 import { useMutation } from 'react-query';
 import Nav from '../components/Nav';
 import * as api from '../utils/sendAuthRequest';
-import { verifyJwt } from '../utils/verifyJwt';
 function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
-  const { isLoading, data, error, mutate } = useMutation(api.login);
-  const handleLogin = (e) => {
+  const { isLoading, data, error, mutate } = useMutation(api.register);
+  const handleSignup = (e) => {
     e.preventDefault();
     mutate({ email, password });
   };
@@ -23,7 +22,7 @@ function Login(props) {
   };
 
   if (data) {
-    router.push('/application');
+    router.push('/login');
   }
 
   return (
@@ -85,18 +84,18 @@ function Login(props) {
               font-medium text-white bg-indigo-600 hover:bg-indigo-700 
               focus:outline-none focus:ring-2 focus:ring-offset-2 
               focus:ring-indigo-500"
-                  onClick={handleLogin}
+                  onClick={handleSignup}
                 >
-                  {isLoading ? 'Loading...' : 'Log In'}
+                  {isLoading ? 'Loading...' : 'Sign Up'}
                 </button>
               </div>
               <p>
-                {`Don't have an account?`}
+                {`Already have an account?`}
                 <button
                   className="text-blue-500 pl-2"
-                  onClick={(e) => router.push('/signup')}
+                  onClick={(e) => router.push('/login')}
                 >
-                  Sign Up
+                  Log In 
                 </button>
               </p>
 

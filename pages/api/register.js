@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export default async (req, res) => {
+export default async function register (req, res) {
   const { headers, body } = req;
 
   try {
     const { data, headers: returnedHeaders } = await axios.post(
-      'http://localhost:300o/user/signup',
+      'http://localhost:5000/auth/register',
       body,
       {
         headers,
