@@ -47,7 +47,7 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
         onClick={() => handleClick('next')}
         className="cursor-pointer disabled:bg-gray-400 rounded-lg bg-green-500 py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-slate-700 hover:text-white"
       >
-        {currentStep === steps.length - 1 ? 'Confirm' : 'Next'}
+        {currentStep === steps.length - 1 ? 'Confirm' : 'Save and Continue'}
       </button>
     </div>
   );

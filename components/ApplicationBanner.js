@@ -13,13 +13,14 @@ function ApplicationBanner() {
   
 
   return (
-    <div className="max-w-4xl mx-auto my-10 font-raleway space-y-8">
+    <div className="max-w-[1225px] mx-auto my-10 font-raleway space-y-8">
       <div className="relative h-96 w-full">
         <Image
           src="/applicationBanner.jpg"
           className=" rounded-md"
           layout="fill"
           objectFit="cover"
+          alt=''
         />
       </div>
       <div className="space-y-5">
@@ -50,7 +51,7 @@ function ApplicationBanner() {
           Application Form Overview can be found{' '}
           <a
             href="https://drive.google.com/file/d/18Ge4LLZpxmOh3OT1V0XyiuTxvoPpXyVk/view?usp=sharing"
-            target="_blank"
+            // target="_blank"
             className="text-[#1e7385] font-semibold"
           >
             {' '}

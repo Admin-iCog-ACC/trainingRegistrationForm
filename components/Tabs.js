@@ -1,23 +1,23 @@
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 function Tabs({ color }) {
   const [openTab, setOpenTab] = useState(1);
   return (
     <>
-      <div className="max-w-4xl mx-auto flex flex-wrap font-raleway">
+      <div className="max-w-[1225px] mx-auto flex font-raleway">
         <div className="w-full">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            className="flex mb-0 list-none  pt-3 pb-4 flex-row"
             role="tablist"
           >
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">
+            <li className="-mb-px mr-2 last:mr-0  text-center border">
               <a
                 className={
-                  ' font-semibold px-5 py-3 shadow-lg rounded block leading-normal ' +
+                  " font-semibold px-5 text-xs lg:text-md py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 1
-                    ? 'text-white bg-[#178c9e]'
-                    : 'text-black bg-white')
+                    ? "text-white bg-[#178c9e]"
+                    : "text-black bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -30,13 +30,13 @@ function Tabs({ color }) {
                 Overview
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">
+            <li className="-mb-px mr-2 last:mr-0 text-center border">
               <a
                 className={
-                  ' font-semibold  px-5 py-3 shadow-lg rounded block leading-normal ' +
+                  " font-semibold text-xs lg:text-md px-5 py-[3.5px] lg:py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 2
-                    ? 'text-white bg-[#178c9e]'
-                    : 'text-black bg-white')
+                    ? "text-white bg-[#178c9e]"
+                    : "text-black bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -52,10 +52,10 @@ function Tabs({ color }) {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">
               <a
                 className={
-                  ' font-semibold  px-5 py-3 shadow-lg rounded block leading-normal ' +
+                  " font-semibold text-xs lg:text-md  py-[3.5px] lg:py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 3
-                    ? 'text-white bg-[#178c9e]'
-                    : 'text-black bg-white')
+                    ? "text-white bg-[#178c9e]"
+                    : "text-black bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -71,29 +71,29 @@ function Tabs({ color }) {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">
               <a
                 className={
-                  ' font-semibold  px-5 py-3 shadow-lg rounded block leading-normal ' +
+                  " font-semibold text-xs lg:text-md  px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 4
-                    ? 'text-white bg-[#178c9e]'
-                    : 'text-black bg-white')
+                    ? "text-white bg-[#178c9e]"
+                    : "text-black bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(4);
                 }}
                 data-toggle="tab"
-                href="#link3"
+                href="#link4"
                 role="tablist"
               >
                 Eligibility
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded text-lg">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div
                   className={`flex flex-wrap md:flex-nowrap gap-3 flex-row-reverse ${
-                    openTab === 1 ? 'block' : 'hidden'
+                    openTab === 1 ? "block" : "hidden"
                   }`}
                   id="link1"
                 >
@@ -103,11 +103,12 @@ function Tabs({ color }) {
                       layout="fill"
                       className="rounded"
                       objectFit="cover"
+                      alt=""
                     />
                   </div>
                   <div className="mt-3 lg:mt-0 md:w-1/2 space-y-3 ">
                     <p>
-                      The first step in the accelerator process is the{' '}
+                      The first step in the accelerator process is the{" "}
                       <strong>application</strong>. In this step candidates will
                       fill out an online registration form through which we
                       collect background information on founders and their
@@ -128,7 +129,7 @@ function Tabs({ color }) {
                 </div>
                 <div
                   className={`flex flex-wrap md:flex-nowrap gap-3 flex-row-reverse ${
-                    openTab === 2 ? 'block' : 'hidden'
+                    openTab === 2 ? "block" : "hidden"
                   }`}
                   id="link2"
                 >
@@ -138,6 +139,7 @@ function Tabs({ color }) {
                       layout="fill"
                       className="rounded"
                       objectFit="cover"
+                      alt=""
                     />
                   </div>
                   <div className="mt-3 lg:mt-0 md:w-1/2 space-y-3 ">
@@ -154,7 +156,7 @@ function Tabs({ color }) {
                 </div>
                 <div
                   className={`flex flex-wrap md:flex-nowrap gap-3 flex-row-reverse ${
-                    openTab === 3 ? 'block' : 'hidden'
+                    openTab === 3 ? "block" : "hidden"
                   }`}
                   id="link3"
                 >
@@ -164,6 +166,7 @@ function Tabs({ color }) {
                       layout="fill"
                       className="rounded"
                       objectFit="cover"
+                      alt=""
                     />
                   </div>
                   <div className="mt-3 lg:mt-0 md:w-1/2">
@@ -181,29 +184,31 @@ function Tabs({ color }) {
                   </div>
                 </div>
                 <div
-                  className={`flex flex-wrap md:flex-nowrap gap-3 flex-row-reverse ${
-                    openTab === 4 ? 'block' : 'hidden'
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-5 lg:h-72 mt-3  ${
+                    openTab === 4 ? "block" : "hidden"
                   }`}
                   id="link4"
                 >
-                  <div className="relative h-56 w-full md:w-1/2">
+                  <div className="relative h-56 lg:h-full w-full  lg:order-last">
                     <Image
                       src="/eligibility.jpeg"
                       layout="fill"
                       className="rounded"
-                      objectFit="cover"
+                      objectFit="contain"
+                      alt=""
                     />
                   </div>
-                  <div className="mt-3 lg:mt-0 md:w-1/2 space-y-3 ">
-                    <h4 className="font-bold">Eligible Applicants </h4>
+                  <div className="mt-3 lg:mt-0 space-y-3 text-lg">
+                    <h4 className="font-bold text-xl">Eligible Applicants </h4>
                     <h4>Eligible applicants must be:</h4>
-                    <ul className="list-disc pl-8">
+                    <ul className="list-disc pl-8 space-y-1">
                       <li>Age between 15 and 35 at time of application</li>
                       <li>Resident and national of Ethiopia</li>
                       <li>
-                        Product or service business idea on{' '}
+                        Product or service business idea on{" "}
                         <strong>
-                          Adolescent's and Youth Sexual Reproductive Health
+                          Adolescents&apos;s and Youth Sexual Reproductive
+                          Health
                         </strong>
                       </li>
                       <li>

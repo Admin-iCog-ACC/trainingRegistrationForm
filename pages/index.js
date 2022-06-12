@@ -7,6 +7,7 @@ import Nav from '../components/Nav';
 import PartnersSection from '../components/PartnersSection';
 
 function Home() {
+
   return (
     <div className="bg-[#f6f9ff] font-raleway banner-bg-img">
       <Nav/>

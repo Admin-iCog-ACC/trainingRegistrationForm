@@ -12,7 +12,7 @@ function PartnersSection() {
           <a
             href="https://www.packard.org/"
             title="David"
-            target="_blank"
+            // target="_blank"
             className="relative w-40 h-40"
           >
             <Image
@@ -20,6 +20,7 @@ function PartnersSection() {
               layout="fill"
               objectFit="contain"
               src="/david-removebg-preview.png"
+              alt=''
             />
           </a>
         </div>
@@ -27,7 +28,7 @@ function PartnersSection() {
           <a
             href="https://www.ethioymca.org/index.php/en/"
             title="YMCA"
-            target="_blank"
+            // target="_blank"
             className="relative w-48 h-48"
           >
             <Image
@@ -35,6 +36,7 @@ function PartnersSection() {
               layout="fill"
               objectFit="contain"
               src="/ymca-removebg-preview.png"
+              alt=''
             />
           </a>
         </div>
@@ -49,6 +51,7 @@ function PartnersSection() {
               className=""
               layout="fill"
               objectFit="contain"
+              alt=''
               src="/hnet.com-image.png"
             />
           </a>
@@ -64,6 +67,7 @@ function PartnersSection() {
               className=""
               layout="fill"
               objectFit="contain"
+              alt=''
               src="/photo6026103094024190220-removebg-previe.png"
             />
           </a>

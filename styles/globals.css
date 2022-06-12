@@ -47,7 +47,7 @@
 .footer-bg-img {
   background: white url(/footer-bg.png) no-repeat right top;
   /* background-image: url('/footer-bg.png'); */
-  background-size: contain;
+  background-size: cover;
 }
 
 .banner-bg-img {
