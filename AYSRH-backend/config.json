@@ -1,0 +1,6 @@
+﻿{
+   
+    "connectionString": "mongodb+srv://Amen:XQY9So7eBnBOOtrW@cluster0.pgm2u2h.mongodb.net/?retryWrites=true&w=majority",
+    "connectionStringLocal": "MONGO_DB_LOCAL=mongodb://127.0.0.1:27017/aysrh",
+    "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
+}
