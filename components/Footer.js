@@ -106,11 +106,11 @@ function Footer() {
             . All Rights Reserved
           </span>
           <div className="flex justify-center text-sm space-x-1">
-            <a href="https://mydesignafrica.com/" target="_blank">
+            <a href="https://mydesignafrica.com/" target="_blank" rel="noreferrer">
               myDesignAfrica
             </a>
             <p>-</p>
-            <a href="https://bootstrapmade.com/" target="_blank">
+            <a href="https://bootstrapmade.com/" target="_blank" rel="noreferrer">
               BootstrapMade
             </a>
           </div>

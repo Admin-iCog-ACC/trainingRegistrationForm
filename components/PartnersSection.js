@@ -14,6 +14,7 @@ function PartnersSection() {
             title="David"
             target="_blank"
             className="relative w-40 h-40"
+            rel="noreferrer"
           >
             <Image
               className=""
@@ -29,6 +30,7 @@ function PartnersSection() {
             title="YMCA"
             target="_blank"
             className="relative w-48 h-48"
+            rel="noreferrer"
           >
             <Image
               className=""
