@@ -5,7 +5,7 @@ export default async (req, res) => {
 
   try {
     const { data, headers: returnedHeaders } = await axios.post(
-      'http://localhost:300o/user/signup',
+      'http://143.198.190.167:5000/user/signup',
       body,
       {
         headers,
