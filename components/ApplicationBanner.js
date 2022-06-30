@@ -1,33 +1,41 @@
 import Image from 'next/image';
 import { useRef, useEffect } from 'react';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 function ApplicationBanner() {
-  const {asPath} = useRouter()
-  const applicationProcessRef = useRef(null)
+  const { asPath } = useRouter();
+  const applicationProcessRef = useRef(null);
   useEffect(() => {
-    if(asPath.split("#")[1]!==undefined && asPath.split("#")[1] ==="accelerator-program"){
-      window.scrollTo({top: applicationProcessRef?.current?.offsetTop, behavior: 'smooth'})
+    if (
+      asPath.split('#')[1] !== undefined &&
+      asPath.split('#')[1] === 'accelerator-program'
+    ) {
+      window.scrollTo({
+        top: applicationProcessRef?.current?.offsetTop,
+        behavior: 'smooth',
+      });
     }
-  }, [asPath])
-  
+  }, [asPath]);
 
   return (
     <div className="max-w-[1225px] mx-auto my-10 font-raleway space-y-8">
-      <div className="relative h-96 w-full">
+      <div className="relative md:h-[400px] h-72  w-full">
         <Image
           src="/applicationBanner.jpg"
           className=" rounded-md"
           layout="fill"
-          objectFit="cover"
-          alt=''
+          objectFit="fill"
+          alt=""
         />
       </div>
-      <div className="space-y-5">
-         <h1 ref={applicationProcessRef} className="text-5xl text-gray-700 font-bold">
+      <div className="space-y-5 mx-5 lg:none">
+        <h1
+          ref={applicationProcessRef}
+          className="md:text-5xl text-4xl text-gray-700 font-bold"
+        >
           Application Process
-        </h1> 
-        <ul className="list-disc pl-8 text-lg tracking-wide text-[#333333]">
+        </h1>
+        <ul className="list-disc pl-8 md:text-lg text-base tracking-wide text-[#333333]">
           <li>
             Applicants must submit their applications electronically through
             this webpage [INSERT LINK TO APPLICATION FORM]

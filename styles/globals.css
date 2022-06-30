@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,7 +47,7 @@
 }
 
 .footer-bg-img {
-  background: white url(/footer-bg.png) no-repeat right top;
+  background: white url(/footer-bg.png) no-repeat center;
   /* background-image: url('/footer-bg.png'); */
   background-size: cover;
 }
