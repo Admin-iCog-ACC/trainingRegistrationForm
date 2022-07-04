@@ -117,7 +117,7 @@ export function getServerSideProps({ req, res }) {
   const jwt = cookies.jwt;
   if (jwt) {
     try {
-      verifyJwt(jwt, process.env.SECRET_KEY);
+      verifyJwt(jwt, '12EUDISVBS7DGV8734H39EWNNCUS');
       return {
         props: {},
         redirect: {

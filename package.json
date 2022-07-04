@@ -7,8 +7,8 @@
     "build": "next build",
     "export": "npm run build && next export",
     "start": "next start",
-    "lint": "next lint",
-    "proxy":"http://localhost:3000"
+    "lint": "next lint"
+  
   },
   "dependencies": {
     "axios": "^0.27.2",
