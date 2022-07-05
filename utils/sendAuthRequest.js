@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'https://oyster-app-6mymk.ondigitalocean.app/api' });
+const api = axios.create({ baseURL: 'http://143.198.190.167:5000' });
 
 export const login = async (data) => {
   const res = await api.post('/login', data);
