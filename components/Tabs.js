@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image';
+import { useState } from 'react';
 
 function Tabs({ color }) {
   const [openTab, setOpenTab] = useState(1);
@@ -11,13 +11,13 @@ function Tabs({ color }) {
             className="flex mb-0 list-none  pt-3 pb-4 flex-row"
             role="tablist"
           >
-            <li className="-mb-px mr-2 last:mr-0  text-center border">
+            <li className="-mb-px mr-2 flex-auto last:mr-0  text-center border">
               <a
                 className={
-                  " font-semibold px-5 text-xs lg:text-md py-3 shadow-lg rounded block leading-normal " +
+                  ' font-semibold text-xs lg:text-base  px-5 py-3 shadow-lg rounded block leading-normal  ' +
                   (openTab === 1
-                    ? "text-white bg-[#178c9e]"
-                    : "text-black bg-white")
+                    ? 'text-white bg-[#178c9e]'
+                    : 'text-black bg-white')
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -30,13 +30,13 @@ function Tabs({ color }) {
                 Overview
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 text-center border">
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">
               <a
                 className={
-                  " font-semibold text-xs lg:text-md px-5 py-[3.5px] lg:py-3 shadow-lg rounded block leading-normal " +
+                  ' font-semibold text-xs lg:text-base px-5 py-[2.5px] sm:py-3 shadow-lg rounded block leading-normal  ' +
                   (openTab === 2
-                    ? "text-white bg-[#178c9e]"
-                    : "text-black bg-white")
+                    ? 'text-white bg-[#178c9e]'
+                    : 'text-black bg-white')
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -52,10 +52,10 @@ function Tabs({ color }) {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">
               <a
                 className={
-                  " font-semibold text-xs lg:text-md  py-[3.5px] lg:py-3 shadow-lg rounded block leading-normal " +
+                  ' font-semibold text-xs lg:text-base px-5 py-[2.5px] sm:py-3 shadow-lg rounded block leading-normal  ' +
                   (openTab === 3
-                    ? "text-white bg-[#178c9e]"
-                    : "text-black bg-white")
+                    ? 'text-white bg-[#178c9e]'
+                    : 'text-black bg-white')
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -71,10 +71,10 @@ function Tabs({ color }) {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center border">
               <a
                 className={
-                  " font-semibold text-xs lg:text-md  px-5 py-3 shadow-lg rounded block leading-normal " +
+                  ' font-semibold text-xs lg:text-base px-5 py-3 shadow-lg rounded block leading-normal  ' +
                   (openTab === 4
-                    ? "text-white bg-[#178c9e]"
-                    : "text-black bg-white")
+                    ? 'text-white bg-[#178c9e]'
+                    : 'text-black bg-white')
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -88,12 +88,12 @@ function Tabs({ color }) {
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded text-lg">
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded text-md font-raleway">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div
                   className={`flex flex-wrap md:flex-nowrap gap-3 flex-row-reverse ${
-                    openTab === 1 ? "block" : "hidden"
+                    openTab === 1 ? 'block' : 'hidden'
                   }`}
                   id="link1"
                 >
@@ -108,7 +108,7 @@ function Tabs({ color }) {
                   </div>
                   <div className="mt-3 lg:mt-0 md:w-1/2 space-y-3 ">
                     <p>
-                      The first step in the accelerator process is the{" "}
+                      The first step in the accelerator process is the{' '}
                       <strong>application</strong>. In this step candidates will
                       fill out an online registration form through which we
                       collect background information on founders and their
@@ -129,7 +129,7 @@ function Tabs({ color }) {
                 </div>
                 <div
                   className={`flex flex-wrap md:flex-nowrap gap-3 flex-row-reverse ${
-                    openTab === 2 ? "block" : "hidden"
+                    openTab === 2 ? 'block' : 'hidden'
                   }`}
                   id="link2"
                 >
@@ -145,7 +145,7 @@ function Tabs({ color }) {
                   <div className="mt-3 lg:mt-0 md:w-1/2 space-y-3 ">
                     <p>
                       Startups that join will have free access to a co-working
-                      space in which teams from different projects work in a
+                      space for <strong> 6 month </strong> in which teams from different projects work in a
                       dynamic environment to scale their business. It is within
                       these spaces that we will be working closely with founders
                       and Co-founders to build their startups as they are
@@ -156,7 +156,7 @@ function Tabs({ color }) {
                 </div>
                 <div
                   className={`flex flex-wrap md:flex-nowrap gap-3 flex-row-reverse ${
-                    openTab === 3 ? "block" : "hidden"
+                    openTab === 3 ? 'block' : 'hidden'
                   }`}
                   id="link3"
                 >
@@ -185,7 +185,7 @@ function Tabs({ color }) {
                 </div>
                 <div
                   className={`grid grid-cols-1 lg:grid-cols-2 gap-5 lg:h-72 mt-3  ${
-                    openTab === 4 ? "block" : "hidden"
+                    openTab === 4 ? 'block' : 'hidden'
                   }`}
                   id="link4"
                 >
@@ -205,7 +205,7 @@ function Tabs({ color }) {
                       <li>Age between 15 and 35 at time of application</li>
                       <li>Resident and national of Ethiopia</li>
                       <li>
-                        Product or service business idea on{" "}
+                        Product or service business idea on{' '}
                         <strong>
                           Adolescents&apos;s and Youth Sexual Reproductive
                           Health

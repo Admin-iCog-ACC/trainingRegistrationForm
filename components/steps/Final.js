@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useMutation } from "react-query";
-import { useStepperContext } from "../../contexts/StepperContext";
-import { modifyObj } from "../../utils/modifyObject";
-import { apply } from "../../utils/sendAuthRequest";
-import { useRouter } from "next/router";
+import { useEffect } from 'react';
+import { useMutation } from 'react-query';
+import { useStepperContext } from '../../contexts/StepperContext';
+import { modifyObj } from '../../utils/modifyObject';
+import { apply } from '../../utils/sendAuthRequest';
+import { useRouter } from 'next/router';
 
 export default function Final() {
   const { isLoading, data, error, mutate } = useMutation(apply);
@@ -11,15 +11,12 @@ export default function Final() {
   const router = useRouter();
   const handleRedirect = (e) => {
     e.preventDefault();
-    router.push("/");
+    router.push('/');
   };
 
   useEffect(() => {
-    if (userData !== null || userData === {}) {
-      const newData = modifyObj(userData);
-      mutate(newData);
-    }
-  },[]);
+    mutate({ filled: true });
+  }, []);
   if (isLoading) return <div className="flex justify-center">Loading...</div>;
   return (
     <div className="container md:mt-10">

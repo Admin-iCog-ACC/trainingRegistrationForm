@@ -1,9 +1,11 @@
 import { useStepperContext } from '../../contexts/StepperContext';
+import { convertData } from '../../utils/modifyObject';
 import { validateInputs } from '../../utils/validateInputs';
 import InfoAboutFounders from './InfoAbourFounders';
 import Required from './Required';
+import { useEffect } from 'react';
 
-function PersonalAndContactInformation() {
+function PersonalAndContactInformation({ data }) {
   const { userData, setUserData } = useStepperContext();
 
   const handleChange = (e) => {
@@ -17,6 +19,12 @@ function PersonalAndContactInformation() {
       },
     });
   };
+  useEffect(() => {
+    if (data) {
+      setUserData(convertData(data));
+    }
+  }, [data]);
+
   return (
     <div className="flex flex-col ">
       <div className="mx-2 w-full sm:w-1/2 md:w-2/3 flex-1">
@@ -55,7 +63,7 @@ function PersonalAndContactInformation() {
         <p className="text-xs text-red-500">{userData['phoneNumber']?.error}</p>
       </div>
       <div className="mx-2 mt-3 w-full flex-1">
-        <InfoAboutFounders />
+        <InfoAboutFounders founders={data?.founders} />
       </div>
     </div>
   );

@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useStepperContext } from '../../contexts/StepperContext';
 
-function InfoAboutFounders() {
+function InfoAboutFounders({ founders }) {
   const [founderInfos, setFounderInfos] = useState([
     { fullName: '', age: 15, gender: '' },
   ]);
-
+  useEffect(() => {
+    if (founders?.length >= 1) {
+      setFounderInfos(founders);
+    }
+  }, [founders]);
   const { userData, setUserData } = useStepperContext();
   const inputChange = (e, index) => {
     const { name, value } = e.target;
@@ -15,15 +19,13 @@ function InfoAboutFounders() {
     const validated = founderInfos.every(
       (info) =>
         info.fullName.length > 1 &&
-       (info.age >= 15 ||
-        info.age <= 35) &&
+        (info.age >= 15 || info.age <= 35) &&
         info.gender !== ''
     );
     const filteredFounders = userData['founders']?.filter(
       (info) =>
         info.fullName.length > 1 &&
-        (info.age >= 15 ||
-        info.age <= 35) &&
+        (info.age >= 15 || info.age <= 35) &&
         info.gender !== ''
     );
     setUserData({ ...userData, founders: filteredFounders ?? [] });
@@ -44,13 +46,16 @@ function InfoAboutFounders() {
 
   return (
     <div className="text-xs space-y-5 ">
-      <div className="space-x-1  flex justify-between">
+      <div className=" flex lg:space-x-40 md:space-x-5 space-x-2 ">
         <label className="label-style">
           {' '}
           FOUNDER/CO FOUNDERS NAME, AGE & GENDER : *{' '}
         </label>
-        <button className="px-2 rounded bg-blue-600" onClick={addToList}>
-          Add
+        <button
+          className="rounded-full text-xl flex items-center shadow-lg justify-center px-3 border hover:bg-green-500 hover:text-white"
+          onClick={addToList}
+        >
+          +
         </button>
       </div>
       {founderInfos?.map((x, index) => {
