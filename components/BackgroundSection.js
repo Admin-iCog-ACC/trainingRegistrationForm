@@ -8,7 +8,7 @@ function BackgroundSection() {
           <Image src="/startup.jpg" layout="fill" objectFit="cover" alt="" />
         </div>
         <div className="px-5 space-y-3 p-10">
-          <h2 className="text-4xl">Background of the Project</h2>
+          <h2 className="text-4xl">About the Project</h2>
           <p className="text-md text-gray-600">
             Supported by the David and Lucile Packard Foundation, the project{' '}
             <strong className="text-black">
