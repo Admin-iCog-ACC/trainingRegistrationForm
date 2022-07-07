@@ -31,7 +31,7 @@ function ContentSection() {
               alt=""
             />
           </div>
-          <h4 className="font-bold text-2xl">AYSRH Campaign</h4>
+          <h4 className="font-bold text-2xl">Wede Salon Campaign</h4>
           <p className="text-sm text-gray-700 text-center">
             The younger generation looks for digital platforms for information
             about their bodies, health and relationships; yet often has a hard
