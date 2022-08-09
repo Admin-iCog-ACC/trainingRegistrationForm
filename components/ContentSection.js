@@ -40,6 +40,9 @@ function ContentSection() {
             information to educate the Adolescents
             and Youth.
           </p>
+          <span className='text-[#1593a7] font-semibold text-center'>
+           <a href='https://wedesalon.blogspot.com/2022/08/blog-post.html'>Wedesalon Blog</a>
+          </span>
           <div className="flex space-x-1">
             <span className="text-[#1593a7] font-semibold space-x-1">
               <a href="https://www.facebook.com/wedesalon/">Facebook</a> |
