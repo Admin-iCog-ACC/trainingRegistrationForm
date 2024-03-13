@@ -23,13 +23,13 @@ function Banner() {
               </div>
             </div>
             <div className="flex justify-center lg:justify-start  mt-14">
-              <button
+              {/* <button
                 className="bg-[#168c9e] w-48 py-3.5 text-white rounded-[4px] shadom-md flex justify-center items-center space-x-2 group"
                 onClick={(e) => router.push('/accelerator#accelerator-program')}
               >
                 <p className="text-lg">Apply Here</p>
                 <BsArrowRight className="text-xl transition duration-200 ease-out group-hover:translate-x-1 " />
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="relative h-auto w-auto hidden lg:block lg:w-1/3">

@@ -12,11 +12,11 @@ function AcceleratorProgram() {
       </div>
       <Tabs />
       <div className="flex justify-center lg:justify-start  mt-10">
-        <button className="bg-[#168c9e] w-48 py-3 text-2xl  text-white rounded-[4px] flex justify-center items-center space-x-2 group"
+        {/* <button className="bg-[#168c9e] w-48 py-3 text-2xl  text-white rounded-[4px] flex justify-center items-center space-x-2 group"
         onClick={e=>router.push('/application')}
         >
           <p>Apply Here</p>
-        </button>
+        </button> */}
       </div>
     </div>
   );

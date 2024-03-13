@@ -35,7 +35,7 @@ function Nav() {
             alt=""
           />
         </div>
-        <div className="lg:flex text-base font-semibold hidden space-x-10 items-center">
+        <div className="lg:flex text-base font-semibold hidden space-x-7 items-center">
           <a
             href="https://icogacc.com/"
             className="text-black hover:text-[#178c9f] inline-flex items-center "
@@ -74,7 +74,7 @@ function Nav() {
             </ul>
           </div>
           <div className="group inline-block relative">
-            <a className="text-black hover:text-[#178c9f] inline-flex items-center">
+            <a className="text-black hover:text-[#178c9f] inline-flex cursor-pointer items-center">
               <span className="mr-1">Impact</span>
               <svg
                 className="fill-current h-4 w-4"
@@ -103,6 +103,22 @@ function Nav() {
               </li>
               <li className="">
                 <a
+                  className="bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap cursor-pointer"
+                  onClick={(e) => router.push('/')}
+                >
+                  AYSRH
+                </a>
+              </li>
+              <li className="">
+                <a
+                  className="rounded-b bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
+                  href="https://impact.icogacc.com/"
+                >
+                  Social Impact
+                </a>
+              </li>
+              <li className="">
+                <a
                   className="rounded-b bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
                   href="https://icogacc.com/impact/solve+it"
                 >
@@ -127,22 +143,52 @@ function Nav() {
 
           <a
             className="text-black hover:text-[#178c9f] cursor-pointer inline-flex items-center "
-            onClick={(e) => router.push('/')}
+            href='https://digitruckethiopia.icogacc.com/'
           >
-            <span className="mr-1">AYSRH</span>
+            <span className="mr-1">DigiTruck ET </span>
           </a>
 
-          <a
-            href="https://icogacc.com/career"
-            className="text-black hover:text-[#178c9f] inline-flex items-center"
-          >
-            <span className="mr-1">Career</span>
-          </a>
+          <div className="group inline-block relative ">
+            <a className="text-black hover:text-[#178c9f] inline-flex cursor-pointer items-center">
+              <span className="mr-1">Career</span>
+              <svg
+                className="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </a>
+            <ul className="absolute shadow-lg hidden text-gray-700 py-5 bg-white group-hover:block w-48">
+              <li className="">
+                <a
+                  className="rounded-t bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
+                  href="https://career.icogacc.com/"
+                >
+                  Jobs
+                </a>
+              </li>
+              <li className="">
+                <a
+                  className="bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
+                  href="https://career.icogacc.com/internships"
+                >
+                  Internships
+                </a>
+              </li>
+            </ul>
+          </div>
           <a
             href="https://icogacc.com/register"
             className="text-xl text-white px-5 py-3 rounded bg-[#178c9f]"
           >
             Register
+          </a>
+          <a
+            href="https://donation.icogacc.com/ "
+            className="text-xl text-white px-5 py-3 rounded bg-[#178c9f]"
+          >
+            Donate
           </a>
         </div>
         <div className="lg:hidden text-4xl text-[#178c9f]" onClick={() => setIsOpen(true)}>
@@ -254,6 +300,22 @@ function Modal() {
               <li className="">
                 <a
                   className="rounded-b bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
+                  onClick={(e) => router.push('/')}
+                >
+                  AYSRH
+                </a>
+              </li>
+              <li className="">
+                <a
+                  className="rounded-b bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
+                  href="https://impact.icogacc.com/"
+                >
+                  Social Impact
+                </a>
+              </li>
+              <li className="">
+                <a
+                  className="rounded-b bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
                   href="https://icogacc.com/impact/solve+it"
                 >
                   Solve IT
@@ -275,24 +337,54 @@ function Modal() {
             <span className="mr-1">Blog</span>
           </a>
 
-          <Link
-            href="/"
+          <a
+            href="https://digitruckethiopia.icogacc.com/"
             className="text-black hover:text-[#178c9f] inline-flex items-center "
           >
-            <span className="mr-1">AYSRH</span>
-          </Link>
-
-          <a
-            href="https://icogacc.com/career"
-            className="text-black hover:text-[#178c9f] inline-flex items-center"
-          >
-            <span className="mr-1">Career</span>
+            <span className="mr-1">DigiTruck ET</span>
           </a>
+
+          <div className="group inline-block relative">
+            <a className="text-black hover:text-[#178c9f] inline-flex items-center">
+              <span className="mr-1">Career</span>
+              <svg
+                className="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </a>
+            <ul className="absolute  hidden text-gray-700 py-5 group-hover:block w-48 bg-white ">
+              <li className="">
+                <a
+                  className="rounded-t bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
+                  href="https://career.icogacc.com/"
+                >
+                  Jobs
+                </a>
+              </li>
+              <li className="">
+                <a
+                  className="bg-white hover:text-[#178c9f] py-2 px-4 block whitespace-no-wrap"
+                  href="https://career.icogacc.com/internships"
+                >
+                  Internships
+                </a>
+              </li>
+            </ul>
+          </div>
           <a
             href="https://icogacc.com/register"
-            className="text-xl text-white px-5 py-3 rounded bg-[#178c9f]"
+            className="text-xl w-full text-white px-5 py-3 rounded bg-[#178c9f]"
           >
             Register
+          </a>
+          <a
+            href="https://donation.icogacc.com/"
+            className="text-xl text-white px-5 py-3 rounded bg-[#178c9f]"
+          >
+            Donate
           </a>
         </div>
       </div>
